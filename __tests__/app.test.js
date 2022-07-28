@@ -11,7 +11,6 @@ describe('fruit-routes', () => {
   // Your First (or only) test????
   it('should return a list of fruit items', async () => {
     const res = await request(app).get('/fruits');
-    console.log(res.body);
     const expected = [
       { id: '1', name: 'apple', color: 'red' },
       { id: '2', name: 'orange', color: 'orange' },
@@ -23,12 +22,17 @@ describe('fruit-routes', () => {
     expect(res.body).toEqual(expected);
   });
 
-  it('', async () => {
-
-  });
-
   // If you want another test add it here
-
+  it('/fruits/:id should return fruit detail', async () => {
+    const res = await request(app).get('/fruits/1');
+    console.log(res.body);
+    const apple = {
+      id: '1',
+      name: 'apple',
+      color: 'red',
+    };
+    expect(res.body).toEqual(apple);
+  });
 
   afterAll(() => {
     pool.end();
