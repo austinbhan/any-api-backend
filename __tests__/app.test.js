@@ -23,6 +23,8 @@ describe('fruit-routes', () => {
     expect(res.body).toEqual(expected);
   });
 
+  // If you want another test add it here
+
   afterAll(() => {
     pool.end();
   });
