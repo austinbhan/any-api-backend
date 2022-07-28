@@ -13,7 +13,11 @@ describe('fruit-routes', () => {
     const res = await request(app).get('/fruits');
     console.log(res.body);
     const expected = [
-
+      { id: '1', name: 'apple', color: 'red' },
+      { id: '2', name: 'orange', color: 'orange' },
+      { id: '3', name: 'pineapple', color: 'yellow' },
+      { id: '4', name: 'grape', color: 'purple' },
+      { id: '5', name: 'strawberry', color: 'red' }
     ];
 
     expect(res.body).toEqual(expected);
